@@ -2,12 +2,12 @@
 <html xmlns:th="http://www.thymeleaf.org">
 <head>
     <meta charset="UTF-8" />
-    <title>Welcome</title>
+    <title>Welcome </title>
     <link rel="stylesheet" type="text/css" th:href="@{/static/css/style.css}"/>
     <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.4.0/css/bootstrap.min.css" integrity="sha384-SI27wrMjH3ZZ89r4o+fGIJtnzkAnFs3E4qz9DIYioCQ5l9Rd/7UAa8DHcaL8jkWt" crossorigin="anonymous">
 </head>
 <body>
-<h1>Welcome</h1>
+<h1>Welcome in my first API service</h1>
 <h2 th:utext="${message}">..!..</h2>
 
 <!--
@@ -18,11 +18,11 @@
 
    -->
 
-<a th:href="@{/vehicleList}">Vehicle List</a>
+<a class="btn btn-success" th:href="@{/vehicleList}">Vehicle List</a>
 
-<a th:href="@{http://localhost:8080/swagger-ui.html}" target="_blank">Doc Swagger</a>
+<a class="btn btn-info" th:href="@{http://localhost:8080/swagger-ui.html}" target="_blank">Doc Swagger</a>
 
-<a th:href="@{http://localhost:8080/v2/api-docs}" target="_blank">Doc Format Json</a>
+<a class="btn btn-info" th:href="@{http://localhost:8080/v2/api-docs}" target="_blank">Doc Format Json</a>
 
 </body>
 
