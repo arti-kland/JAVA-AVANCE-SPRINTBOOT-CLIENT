@@ -1,0 +1,27 @@
+<!DOCTYPE HTML>
+<html xmlns:th="http://www.thymeleaf.org">
+<head>
+    <meta charset="UTF-8" />
+    <title>Vehicle</title>
+    <link rel="stylesheet" type="text/css" th:href="@{/static/css/style.css}"/>
+    <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.4.0/css/bootstrap.min.css" integrity="sha384-SI27wrMjH3ZZ89r4o+fGIJtnzkAnFs3E4qz9DIYioCQ5l9Rd/7UAa8DHcaL8jkWt" crossorigin="anonymous">
+</head>
+<body>
+<h1>Vehicle</h1>
+<br/><br/>
+<div>
+    <table border="1">
+        <tr>
+            <th>Id</th>
+            <th>Brand</th>
+            <th>Model</th>
+        </tr>
+        <tr>
+            <td th:utext="${vehicle.id}">Id</td>
+            <td th:utext="${vehicle.brand}">brand</td>
+            <td th:utext="${vehicle.carModel}">carModel</td>
+        </tr>
+    </table>
+</div>
+</body>
+</html>

@@ -1,0 +1,42 @@
+<!DOCTYPE HTML>
+<html xmlns:th="http://www.thymeleaf.org">
+<head>
+    <meta charset="UTF-8" />
+    <title>Update Vehicle</title>
+    <link rel="stylesheet" type="text/css" th:href="@{/static/css/style.css}"/>
+    <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.4.0/css/bootstrap.min.css" integrity="sha384-SI27wrMjH3ZZ89r4o+fGIJtnzkAnFs3E4qz9DIYioCQ5l9Rd/7UAa8DHcaL8jkWt" crossorigin="anonymous">
+</head>
+<body>
+<h1>Update a Vehicle:</h1>
+
+<!--
+   In Thymeleaf the equivalent of
+   JSP's ${pageContext.request.contextPath}/edit.html
+   would be @{/edit.html}
+   -->
+
+<form th:action="@{'/updateVehicle/' +${updateVehicleForm.getId()}}"
+      th:object="${updateVehicleForm}" method="POST">
+    Id:
+    <input type="text" th:field="*{id}" th:value="${updateVehicleForm.getId()}" />
+    <br/>
+    Brand:
+    <input type="text" th:field="*{brand}" th:value="${updateVehicleForm.getId()}" />
+    <br/>
+    CarModel:
+    <input type="text" th:field="*{carModel}" th:value="${updateVehicleForm.getId()}" />
+    <br/>
+    <input type="submit" value="Update" />
+</form>
+
+<br/>
+
+<!-- Check if errorMessage is not null and not empty -->
+
+<!--<div th:if="${errorMessage}" th:utext="${errorMessage}"-->
+<!--     style="color:red;font-style:italic;">-->
+<!--    ...-->
+<!--</div>-->
+
+</body>
+</html>

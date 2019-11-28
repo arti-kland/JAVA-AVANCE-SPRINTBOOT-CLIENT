@@ -1,0 +1,47 @@
+<!DOCTYPE HTML>
+<html xmlns:th="http://www.thymeleaf.org">
+<head>
+    <meta charset="UTF-8" />
+    <title>Vehicle List</title>
+    <link rel="stylesheet" type="text/css" th:href="@{/static/css/style.css}"/>
+    <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.4.0/css/bootstrap.min.css" integrity="sha384-SI27wrMjH3ZZ89r4o+fGIJtnzkAnFs3E4qz9DIYioCQ5l9Rd/7UAa8DHcaL8jkWt" crossorigin="anonymous">
+</head>
+<body>
+<h1>Vehicle List</h1>
+
+<br/><br/>
+<div class="container">
+    <table class="table" border="2">
+        <tr>
+            <th>Id</th>
+            <th>Brand</th>
+            <th>Model</th>
+        </tr>
+        <tr th:each ="vehicle : ${vehicles}">
+            <td th:utext="${vehicle.id}">Id</td>
+            <td th:utext="${vehicle.brand}">brand</td>
+            <td th:utext="${vehicle.carModel}">carModel</td>
+            <td><a class="btn btn-primary" th:href="@{'/vehicle/'+${vehicle.id}}">Car detail</a></td>
+            <td><a class="btn btn-info" th:href="@{'/updateVehicle/'+${vehicle.id}}">Car update</a></td>
+            <td><a href="#" class="delete btn btn-danger" th:data-link="@{'/deleteVehicle/' + ${vehicle.id}}">Delete</a></td>
+        </tr>
+    </table>
+    <a class="btn btn-success" href="addVehicle">Add Vehicle</a>
+</div>
+<script src="https://code.jquery.com/jquery-3.4.1.min.js"></script>
+<script>
+    $('.delete').on("click", (e) => {
+        e.preventDefault();
+    var link = $(e.target).data('link');
+    $.ajax({
+        url: link,
+        method: 'delete',
+        success: function () {
+            location.reload();
+        }
+    })
+    })
+</script>
+
+</body>
+</html>
